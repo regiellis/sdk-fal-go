@@ -1,0 +1,81 @@
+version: '3'
+
+# Dev credentials (FAL_KEY) load from .env for every target; the SDK itself
+# only ever reads the process environment.
+dotenv: ['.env']
+
+tasks:
+  build:
+    desc: Compile all packages
+    cmds:
+      - go build ./...
+
+  test:
+    desc: Run all tests
+    cmds:
+      - go test ./...
+
+  test:race:
+    desc: Run all tests with the race detector
+    cmds:
+      - go test -race ./...
+
+  test:integration:
+    desc: Run integration tests against the live API (needs FAL_KEY)
+    cmds:
+      - go test -tags integration ./...
+
+  cover:
+    desc: Run tests with coverage summary
+    cmds:
+      - go test -cover ./...
+
+  lint:
+    desc: Run golangci-lint
+    cmds:
+      - golangci-lint run
+
+  vet:
+    desc: Run go vet
+    cmds:
+      - go vet ./...
+
+  fmt:
+    desc: Format all Go source
+    cmds:
+      - gofmt -w .
+
+  tidy:
+    desc: Sync go.mod
+    cmds:
+      - go mod tidy
+
+  example:run:
+    desc: Run the synchronous inference example (uses FAL_KEY from .env)
+    cmds:
+      - go run ./examples/run
+
+  example:subscribe:
+    desc: Run the queue subscribe example (uses FAL_KEY from .env)
+    cmds:
+      - go run ./examples/subscribe
+
+  example:stream:
+    desc: Run the SSE streaming example (uses FAL_KEY from .env)
+    cmds:
+      - go run ./examples/stream
+
+  example:upload:
+    desc: Run the storage upload example (uses FAL_KEY from .env)
+    cmds:
+      - go run ./examples/upload
+
+  example:realtime:
+    desc: Run the realtime WebSocket example (uses FAL_KEY from .env)
+    cmds:
+      - go run ./examples/realtime
+
+  example:web:
+    desc: Serve the browser demo on 0.0.0.0 (uses FAL_KEY from .env)
+    cmds:
+      - go run ./examples/webdemo

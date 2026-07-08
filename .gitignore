@@ -1,0 +1,14 @@
+# Secrets
+.env
+.env.*
+
+# Go build artifacts
+/bin/
+*.test
+*.out
+coverage.*
+
+# Editor / OS noise
+.idea/
+.vscode/
+.DS_Store
