@@ -1,7 +1,7 @@
 # sdk-fal-go
 
 [![Go Reference](https://pkg.go.dev/badge/github.com/regiellis/sdk-fal-go.svg)](https://pkg.go.dev/github.com/regiellis/sdk-fal-go)
-[![Go Report Card](https://goreportcard.com/badge/github.com/regiellis/sdk-fal-go)](https://goreportcard.com/report/github.com/regiellis/sdk-fal-go)
+[![CI](https://github.com/regiellis/sdk-fal-go/actions/workflows/ci.yml/badge.svg)](https://github.com/regiellis/sdk-fal-go/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 ![Go Version](https://img.shields.io/badge/Go-1.25%2B-00ADD8?logo=go)
 
